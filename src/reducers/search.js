@@ -3,10 +3,13 @@ import {
   SUGGESTIONS_ERROR,
   SET_CURRENT,
   GET_NEARBY,
+  TOGGLE_SIDEBAR,
+  CLEAR_ALL,
 } from '../actions/types';
 
 const initialState = {
   searching: false,
+  closeSidebar: false,
   suggestions: [],
   currentLocation: null,
   nearbyLocation: [],
@@ -35,9 +38,21 @@ export default function (state = initialState, action) {
         searching: false,
       };
 
+    case TOGGLE_SIDEBAR:
+      return {
+        ...state,
+        closeSidebar: !state.closeSidebar,
+      };
+
+    case CLEAR_ALL:
     case SUGGESTIONS_ERROR:
       return {
         ...state,
+        searching: false,
+        closeSidebar: false,
+        suggestions: [],
+        currentLocation: null,
+        nearbyLocation: [],
       };
 
     default:

@@ -2,3 +2,5 @@ export const GET_SUGGESTIONS = 'GET_SUGGESTIONS';
 export const SUGGESTIONS_ERROR = 'SUGGESTIONS_ERROR';
 export const SET_CURRENT = 'SET_CURRENT';
 export const GET_NEARBY = 'GET_NEARBY';
+export const TOGGLE_SIDEBAR = 'TOGGLE_SIDEBAR';
+export const CLEAR_ALL = 'CLEAR_ALL';

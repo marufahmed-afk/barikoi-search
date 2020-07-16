@@ -5,6 +5,8 @@ import {
   SUGGESTIONS_ERROR,
   SET_CURRENT,
   GET_NEARBY,
+  TOGGLE_SIDEBAR,
+  CLEAR_ALL,
 } from './types';
 
 export const getSuggestions = (value) => async (dispatch) => {
@@ -57,4 +59,16 @@ export const getNearby = (longitude, latitude, pType) => async (dispatch) => {
       type: SUGGESTIONS_ERROR,
     });
   }
+};
+
+export const toggleSidebar = () => async (dispatch) => {
+  dispatch({
+    type: TOGGLE_SIDEBAR,
+  });
+};
+
+export const clearAll = () => async (dispatch) => {
+  dispatch({
+    type: CLEAR_ALL,
+  });
 };

@@ -17,7 +17,7 @@ const MapArea = ({ search: { currentLocation, nearbyLocation } }) => {
 
   return (
     (currentLocation && (
-      <div>
+      <div className='map-area'>
         <LoadScript googleMapsApiKey={process.env.REACT_APP_MAP_API_KEY}>
           <GoogleMap
             mapContainerStyle={containerStyle}
@@ -50,7 +50,7 @@ const MapArea = ({ search: { currentLocation, nearbyLocation } }) => {
         </LoadScript>
       </div>
     )) || (
-      <div>
+      <div className='map-area'>
         <LoadScript googleMapsApiKey={process.env.REACT_APP_MAP_API_KEY}>
           <GoogleMap
             mapContainerStyle={containerStyle}

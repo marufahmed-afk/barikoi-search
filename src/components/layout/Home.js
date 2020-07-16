@@ -1,14 +1,19 @@
 import React from 'react';
 import Sidebar from '../sidebar/Sidebar';
 import MapArea from '../mapArea/MapArea';
+import { connect } from 'react-redux';
 
-const Home = () => {
+const Home = ({ search: { closeSidebar } }) => {
   return (
     <div className='homepage'>
-      <Sidebar />
+      {!closeSidebar && <Sidebar />}
       <MapArea />
     </div>
   );
 };
 
-export default Home;
+const mapStateToProps = (state) => ({
+  search: state.search,
+});
+
+export default connect(mapStateToProps)(Home);
